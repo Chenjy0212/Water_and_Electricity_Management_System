@@ -5,6 +5,4 @@ apple 405 201 2
 banana 406 201 2
 cat 407 201 2
 dog 504 203 2
-elient 505 203,2
-fxxk 506 203 2
-gloable 507 203 2 
+cjy 111111 101 1

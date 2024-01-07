@@ -1,7 +1,7 @@
 #include"usingelectricity.h"
 #include <iomanip>
 
-usingelectricity::usingelectricity(int id, int roomnum, string ltime, string time, double ldegree, double degree, double price, int type, bool pay) {
+usingelectricity::usingelectricity(int id, int roomnum, string ltime, string time, double ldegree, double degree, double price, int type, bool pay, string paytime) {
 	this->s_id = id;
 	this->s_roomnum = roomnum;
 	this->s_ltime = ltime;
@@ -11,6 +11,7 @@ usingelectricity::usingelectricity(int id, int roomnum, string ltime, string tim
 	this->s_price = price;
 	this->s_type = type;
 	this->s_pay = pay;
+	this->s_paytime = paytime;
 }
 //void usingelectricity::show_info00() {
 //	

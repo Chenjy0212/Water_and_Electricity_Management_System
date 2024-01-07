@@ -2,6 +2,7 @@
 #include<iostream>
 #include<string>
 #include <iomanip>
+
 using namespace std;
 
 class system1
@@ -9,13 +10,14 @@ class system1
 public:
 	int s_id;              // 订单号
 	int s_roomnum;         // 房号
-	string s_ltime;         // 上次抄表时间
+	string s_ltime;        // 上次抄表时间
 	string s_time;         // 本次抄表时间
-	double s_ldegree;       // 上次抄表度数
+	double s_ldegree;      // 上次抄表度数
 	double s_degree;       // 本次抄表度数
 	double s_price;        // 价格
 	int s_type;            // 水表还是电表
 	bool s_pay;            // 是否已缴费
+	string s_paytime;        // 缴费时间
 
 	void show_info00() {
 		cout << "编号：" << s_id << endl;
@@ -33,13 +35,20 @@ public:
 		else {
 			cout << "未支付" << endl;
 		}
+		cout << "缴费时间：" << timeformat(s_paytime) << endl;
 	}
 	string get_type() {
 		if (s_type == 1) return string("电表");
 		else return string("水表");
 	}
 	string timeformat(string time) {
-		if (time.length() != 8) return "格式有误，请参考输入：2020101。当前为：" + time;
+		if (time.length() != 8 && time.length() != 14) return "格式有误，请参考输入：20240101 或 20240101000000。当前为：" + time;
+		else if (time == "########") { return "-"; }
+        // 缴费记录带上时分秒，自动记录
+		else if (time.length() == 14) {
+			return time.substr(0, 4) + "年" + time.substr(4, 2) + "月" + time.substr(6, 2) + "日  " +\
+				time.substr(8, 2) + "时" + time.substr(10, 2) + "分" + time.substr(12, 2) + "秒";
+		}
 		else return time.substr(0, 4) + "年" + time.substr(4, 2) + "月" + time.substr(6, 2) + "日";
 	}
 	string get_unit() {
@@ -77,4 +86,8 @@ public:
 	void show_table() {
 		cout << "|" << setw(7) << s_id << setw(8) << "|" << setw(16) << timeformat(s_ltime) << setw(3) << "|"  << setw(15) << timeformat(s_time) << setw(2) << "|" << setw(8) << s_degree - s_ldegree << setw(3) << "|" << setw(9) << s_price << setw(4) <<  "|" << endl;
 	}
+	void show_table2() {
+		cout << "|" << setw(7) << s_id << setw(8) << "|" << setw(32) << timeformat(s_paytime) << setw(4) << "|" << setw(8) << s_degree - s_ldegree << setw(3) << "|" << setw(9) << s_price << setw(4) << "|" << endl;
+	}
+
 };

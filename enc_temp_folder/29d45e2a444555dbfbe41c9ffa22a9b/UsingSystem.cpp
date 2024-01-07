@@ -738,7 +738,7 @@ void usingsystem::not_pay() {
 		cout << "房间号：" << left<< setw(8) << itr->first << "   应缴金额：" << itr->second << endl;
 		for (int j = 0; j < s.m_num; j++) {
 			if (s.m_arr[j]->m_roomNumber == itr->first) {
-				cout << right << setw(6) << "->：" << s.m_arr[j]->m_name << endl;
+				cout << right << setw(6) << "->" << s.m_arr[j]->m_name << endl;
 			}
 		}
 	}
