@@ -1,0 +1,10 @@
+cjy 111 101 1
+jyc 222 101 1
+ycj 404 201 2
+apple 405 201 2
+banana 406 201 2
+cat 407 201 2
+dog 504 203 2
+elient 505 203,2
+fxxk 506 203 2
+gloable 507 203 2 
