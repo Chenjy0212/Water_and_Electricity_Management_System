@@ -42,23 +42,42 @@
 
 
 
-## 🔍 类视图
+## 🔍 宏与类视图
 
-<a href="#"><img src="img/class.png" height="500" align="right" padding="50px" /></a>
-
-- **`mDELTA`** is an algorithm for **m**ultifuricating **D**evelopmental c**E**ll **L**ineage **T**ree **A**lignment. In essence, it compares two rooted, unordered, tip-labeled trees, and finds the best global ｜ local correspondence between the nodes. The **mDELTA** program is designed for analyzing developmental cell lineage trees
-  reconstructed through single-cell DNA barcoding (such as done by
-  **`scGESTALT`** or **`SMALT`**, while greater cellular coverage is expected to
-  yield more meaningful **mDELTA** alignments).
-
-- Except for dealing with cell lineage trees instead of biological
-  sequences, **mDELTA** is conceptually similar to sequence alignment.
-  It helps quantify similarity among different lineage trees,
-  disentangle the consensus and variation, find recurrent motifs, and
-  facilitate comparative/evolutionary analyses.
-
+- **宏定义**
+  
+  ```c++
+  #define FILENAME "persontable.txt"  # 人员信息数据库
+  #define FILENAME2 "wetable.txt"     # 水电使用信息数据库
+  ```
+- **类视图关系**
+  
+  <img src="img/class.png" height="500" padding="50px" />
 
 ## 🚗部分功能介绍与特点
 
+###  v1.0.0
 
+***Recorded on January 1, 2024***
 
+1. 输入格式不正确自动校验，重新输入或者返回当前主菜单
+
+2. 操作与数据库信息热更新，操作完后数据库自动更新。如果操作数据库，系统也能实时更新查看与进一步操作。
+
+3. 订单编号自动生成
+
+4. 自动记录缴费时间
+
+5. 自动获取同一个房间同一种订单类型的上次记录数据，作为上一次记录时间。
+
+6. 缴费选择多样化，可以根据需求，对全部或者对某种类型的订单进行 ”全部，部分订单号“ 进行缴费，自动获取应付金额
+
+7. 查看缴费记录，可以获取所有缴费记录，可以选择半年内的缴费记录和本次缴费数据
+
+   <img src="img/record.png" height="500" padding="50px" />
+
+8. 查看未缴费名单，按照房间号升序排序输出所有人信息，并统计每个房间号应缴费金额
+
+------
+
+### 

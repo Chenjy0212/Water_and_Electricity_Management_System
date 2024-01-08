@@ -147,7 +147,7 @@ void usingsystem::add_info() {
 			newspace1[i] = this->m_arr1[i];
 		}
 	}
-	//循环多次输入会导致数据的写入延新，没必要保留
+	//循环多次输入会导致数据的写入延迟，没必要保留
 	int id;
 	int roomnum;
 	string time;
