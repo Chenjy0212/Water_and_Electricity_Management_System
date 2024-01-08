@@ -58,7 +58,7 @@
 
 ###  v1.0.0
 
-***Recorded on January 1, 2024***
+***Recorded on January 8, 2024***
 
 1. 输入格式不正确自动校验，重新输入或者返回当前主菜单
 
@@ -72,12 +72,33 @@
 
 6. 缴费选择多样化，可以根据需求，对全部或者对某种类型的订单进行 ”全部，部分订单号“ 进行缴费，自动获取应付金额
 
-7. 查看缴费记录，可以获取所有缴费记录，可以选择半年内的缴费记录和本次缴费数据
+7. 查看缴费记录，可以获取所有缴费记录，~~可以选择半年内的缴费记录和本次缴费数据~~
 
-   <img src="img/record.png" height="500" padding="50px" />
+   <img src="img/record.png" height="300" padding="50px" />
 
 8. 查看未缴费名单，按照房间号升序排序输出所有人信息，并统计每个房间号应缴费金额
 
 ------
 
-### 
+### v.1.0.1
+
+***Recorded on January 9, 2024***
+
+1. 修复自动获取上一次记录时间出现的异常
+
+   ```c++
+   // 根据需求返回最大的日期或者最小的日期。
+   string compareDate(vector<string>datavec, string type);
+   ```
+
+2. 新增查看缴费记录时有效期为半年
+
+   ```c++
+   // 获取半年前的时间
+   string get6month_ago(string data);
+   // 判断日期是否在半年内
+   bool in6mon(string date, string dateago);
+   ```
+
+   
+

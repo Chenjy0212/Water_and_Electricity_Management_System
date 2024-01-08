@@ -53,7 +53,7 @@ string get6month_ago(string data) {
 	if (data.length() == 12) {
 		data = data.substr(0, 8);
 	}
-	//介于 7 - 9月
+#	//介于 7 - 9月
 	int mon = stoi(data.substr(4, 2));
 	if (mon >= 7 && mon < 10) {
 		mon -= 6;
